@@ -1,10 +1,10 @@
 /*Estilos generales*/
-*{
+* {
     padding: 0px;
     margin: 0px;
 }
 
-.clearfix{
+.clearfix {
     float: none;
     clear: both;
 }
@@ -14,42 +14,42 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-li{
+li {
     list-style: none;
 }
 
-a{
+a {
     text-decoration: none;
     color: #529125;
 }
 
-a:hover{
+a:hover {
     color: #285616;
 }
 
 /*Cabecera*/
-header{
+header {
     width: 100%;
     margin: auto;
     text-align: center;
 }
 
-#logotipo{
+#logotipo {
     margin: auto;
 }
 
-#logotipo img{
+#logotipo img {
     width: 140px;
 }
 
-header h1{
+header h1 {
     font-size: 40px;
     color: #70b231;
     text-shadow: 0px 2px 4px #333333;
 }
 
 /*Menú*/
-nav{
+nav {
     width: 100%;
     background-color: #333333;
     height: 40px;
@@ -57,133 +57,132 @@ nav{
     margin: 10px auto;
 }
 
-nav ul{
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(10, auto);
     width: 1130px;
     margin: auto;
     list-style: none;
-    justify-content: center;
-    display: flex;
+    gap: 15px;
 }
 
-nav ul li{
-    float: left;
+nav ul li {
     line-height: 40px;
-    margin: 0 15px;
 }
 
-nav ul li:hover{
+nav ul li:hover {
     background-color: #70b231;
     box-shadow: 0px 0px 4px grey inset;
 }
 
-nav ul li a{
+nav ul li a {
     display: block;
     color: white;
+    text-align: center;
 }
 
 /*Contenido principal*/
-#content{
+#content {
     width: 1250px;
     height: auto;
     margin: auto;
     margin-top: 40px;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
 }
 
-#aside{
-    width: 200px;
+#aside {
     background-color: white;
     box-shadow: 0px 2px 2px #ccc;
-    float: left;
+    margin-bottom: auto;
 }
 
-#aside h3{
+#aside h3 {
     text-align: center;
     background-color: #ccc;
 }
 
-.widget{
+.widget {
     width: 180px;
     margin: 5px auto;
 }
 
-.widget form{
+.widget form {
     margin: 5px;
     text-align: center;
 }
 
-.widget a{
+.widget a {
     display: block;
 }
 
-.widget ul{
+.widget ul {
     margin-top: 5px;
 }
 
-.separador{
+.separador {
     border-top: 1px dashed #333;
 }
 
-input[type = "submit"]{
+input[type="submit"] {
     background-color: #70b231;
     border-radius: 5px;
     margin-top: 5px;
 }
 
-input[type = "submit"]:hover{
+input[type="submit"]:hover {
     box-shadow: 0px 0px 2px gray;
 }
 
 /*Secciones*/
-#sections{
-    display: flex;
-    flex-direction: column;
-    float: left;
-    width: 75%;
+#sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
     min-height: 1100px;
-    margin-left: 40px;
+    margin-bottom: 2vw;
 }
 
-#sections section{
+#sections section {
     background-color: white;
     box-shadow: 0px 0px 4px #c9c9c9;
     text-align: justify;
     padding: 20px;
-    margin-bottom: 30px;
     position: relative;
 }
 
-#sections h2{
+#sections h2 {
     text-align: center;
     padding: 5px;
 }
 
-.articulo{
+.articulo {
     padding: 5px;
 }
 
-.stickers{
+.stickers {
     position: absolute;
     width: 100%;
     height: 0;
     top: 0;
 }
 
-.stickerOne{
+.stickerOne {
     position: absolute;
     top: -20px;
 }
 
-.stickerTwo{
+.stickerTwo {
     position: absolute;
     right: 40px;
     top: -20px;
 }
 
-
 /*Pie de página*/
-footer{
-    display: flex;
-    flex-direction: column;
+footer {
+    display: grid;
+    grid-template-columns: 1fr;
     width: 100%;
     margin: auto;
     background-color: #333333;
@@ -193,109 +192,149 @@ footer{
 }
 
 /*Diseño responsivo*/
-
-@media(max-width: 768px){
-    nav{
-        display: flex;
-        justify-content: space-between;
+@media (max-width: 768px) {
+    nav {
+        display: grid;
         height: auto;
-    }
-
-    nav ul{
-        flex-wrap: wrap;
         width: 100%;
     }
 
-    #content{
+    nav ul {
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+    }
+
+    #content {
         width: 95%;
         margin: 20px auto;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
-    #sections{
+    #sections {
         width: 100%;
-        margin-left: 0;
+        gap: 20px;
     }
 
-    #aside{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: 20px;
+    #aside {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        gap: 10px; /* Espacio entre filas y columnas */
+        padding: 10px; /* Espacio alrededor del grid */
     }
 
     .widget{
-        border-right: 1px dashed gray;
-        padding-right: 10px;
-        padding-left: 10px;
+        border: 1px dashed gray;
+        padding: 10px;
     }
 
-    .widget:last-child{
-        border-right: none;
+    #aula1{
+        grid-row-start: 1;
+        grid-column-start: 2;
     }
 
-    #logotipo img{
+    #aula2{
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+    #enlaces{
+        grid-row-start: 2;
+        grid-column-start: 2;
+    }
+
+    .separador {
+        border: none;
+    }
+
+    #logotipo img {
         width: 100px;
     }
 
-    header h1{
+    header h1 {
         font-size: 32px;
     }
 
-    nav ul{
+    nav ul {
         width: 100%;
     }
 
-    .clearfix{
+    .clearfix {
         float: none;
         clear: both;
     }
 }
 
-@media(max-width: 480px){
-    #content{
+@media (max-width: 480px) {
+    nav {
+        display: grid;
+        height: auto;
+        width: 100%;
+    }
+
+    nav ul {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+
+    #content {
         width: 100%;
         margin: 5px auto;
         font-size: 14px;
-        align-items: center;
+        display: grid;
+        place-items: center;
     }
 
-    #sections{
+    #sections {
         width: 95%;
-        margin-left: 0;
     }
 
-    #aside{
+    #aside {
         width: 50%;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 4fr;
         margin-bottom: 20px;
         margin-top: 20px;
-        align-items: center;
     }
 
-    .widget{
-        border-right: none;
+    #aula1{
+        grid-row-start: 2;
+        grid-column-start: 1;
+    }
+
+    #aula2{
+        grid-row-start: 3;
+        grid-column-start: 1;
+    }
+    
+    #enlaces{
+        grid-row-start: 4;
+        grid-column-start: 1;
+    }
+
+    .widget {
+        border: none;
         border-bottom: 1px dashed gray;
         margin-left: 10px;
         margin-right: 10px;
-        padding-bottom: 10px;
+        padding-top: 0;
     }
 
-    .widget:last-child{
+    .widget:last-child {
         border-bottom: none;
     }
 
-    #logotipo img{
+    #logotipo img {
         width: 60px;
     }
 
-    header h1{
+    header h1 {
         font-size: 24px;
     }
 
-    input[type = "submit"]{
+    input[type="submit"] {
         margin-top: 5px;
     }
 }
